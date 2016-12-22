@@ -1,0 +1,20 @@
+These recipe files can build three different packages:
+
+Package name        Python module
+------------        ---------------------------------
+cnnef               import cnnef
+cnnef-with-cplex    import cnnef_with_cplex as cnnef
+cnnef-with-gurobi   import cnnef_with_gurobi as cnnef
+
+Configure your environment to select the variant to build.
+
+Examples:
+
+# Build cnnef
+conda build conda-recipe
+
+# Build cnnef-with-cplex
+WITH_CPLEX=1 CPLEX_ROOT_DIR=/path/to/ibm/ILOG/CPLEX_Studio1251 conda build conda-recipe
+
+# Build cnnef-with-gurobi
+WITH_GUROBI=1 GUROBI_ROOT_DIR=/path/to/gurobi650/linux64 conda build conda-recipe
